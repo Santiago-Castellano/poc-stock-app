@@ -6,6 +6,8 @@ from .models import Product, Service, ServiceProduct
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'link', 'price', 'total_uses','price_per_use',)
     search_fields = ('name',)
+    list_filter = ('uses_in_services__service',)
+
 
 class ServiceProductInline(admin.TabularInline):
     model = ServiceProduct
@@ -18,7 +20,3 @@ class ServiceAdmin(admin.ModelAdmin):
     list_display = ('name', 'cost', 'price')
     inlines = [ServiceProductInline]
 
-
-
-
-admin.site.register(ServiceProduct)

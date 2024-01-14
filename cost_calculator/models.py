@@ -6,7 +6,11 @@ class Product(models.Model):
     link = models.CharField(max_length=10_000, null=True, blank=True)
     price = models.IntegerField()
     total_uses = models.IntegerField()
-
+    
+    class Meta:
+        verbose_name = "Producto"
+        verbose_name_plural = "Productos"
+    
     def __str__(self):
         return self.name
     
@@ -20,6 +24,10 @@ class Service(models.Model):
     earn = models.IntegerField()
 
 
+    class Meta:
+        verbose_name = "Servicio"
+        verbose_name_plural = "Servicios"
+    
     def __str__(self):
         return self.name
 
@@ -39,5 +47,9 @@ class ServiceProduct(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="uses_in_services")
     uses = models.IntegerField()
 
+    class Meta:
+        verbose_name = "Producto para un Servicio"
+        verbose_name_plural = "Productos para un Servicio"
+    
     def __str__(self):
         return f"{self.service} - {self.product} - USOS: {self.uses}"

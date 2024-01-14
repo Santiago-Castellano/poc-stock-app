@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 LOCAL_APPS = [
-    'stock',
+    'cost_calculator',
 ]
 
 CONFIG_APPS = [
@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
